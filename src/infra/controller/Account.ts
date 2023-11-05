@@ -5,8 +5,13 @@ import Signup from "../../application/usecase/Signup";
 // interface adapter
 export default class AccountController {
 
-	constructor (readonly httpServer: HttpServer, signup: Signup, getAccount: GetAccount) {
-		httpServer.on("post", "/signup", async function (params: any, body: any) {
+	constructor(readonly httpServer: HttpServer, signup: Signup, getAccount: GetAccount) {
+
+		httpServer.on("post", "/signup", async function (params: any, body: {
+			name: string,
+			email: string,
+			cpf: string
+		}) {
 			const output = await signup.execute(body);
 			return output;
 		});
