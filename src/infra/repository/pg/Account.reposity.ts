@@ -2,7 +2,7 @@ import Account from "../../../application/repository/Account";
 import AccountEntity from "../../../domain/entity/Account";
 import { Connection } from "../../database/pg";
 
-export default class AccountDAODatabase implements Account {
+export default class AccountRepository implements Account {
 
     constructor(readonly connection: Connection) {
     }

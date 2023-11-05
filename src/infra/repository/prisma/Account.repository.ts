@@ -2,7 +2,7 @@ import Account from "../../../application/repository/Account";
 import AccountEntity from "../../../domain/entity/Account";
 import { PrismaClient } from "../../database/prisma";
 
-export default class AccountDatabase implements Account {
+export default class AccountRepository implements Account {
 
     constructor(readonly prisma: PrismaClient) {
     }
