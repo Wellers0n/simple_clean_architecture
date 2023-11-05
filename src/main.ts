@@ -1,11 +1,10 @@
 import Signup from "./application/usecase/Signup";
 import GetAccount from "./application/usecase/GetAccount";
 import { prisma } from "./infra/database/prisma";
-import AccountDatabase from "./infra/repository/prisma/AccountDatabase";
+import AccountDatabase from "./infra/repository/prisma/Account.repository";
 import ExpressAdapter from "./infra/http/ExpressAdapter";
 import AccountController from "./infra/controller/Account";
 
-// const connection = new PgPromiseAdapter();
 const account = new AccountDatabase(prisma);
 const signup = new Signup(account);
 const getAccount = new GetAccount(account);
